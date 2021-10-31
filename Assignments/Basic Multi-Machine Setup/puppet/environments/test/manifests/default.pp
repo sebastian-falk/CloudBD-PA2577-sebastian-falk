@@ -18,3 +18,5 @@ node 'appserver.home' {
 node 'web.home' {
   include nginx
 }
+
+node 'default' {}

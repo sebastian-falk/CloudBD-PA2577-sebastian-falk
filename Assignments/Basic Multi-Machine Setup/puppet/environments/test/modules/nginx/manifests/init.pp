@@ -3,7 +3,7 @@
 # Installs and run nginx, 
 #
 class nginx {
-  package { 'install nginx':
+  package { 'nginx':
     ensure  => installed,
     require => Exec['apt-get update'],
   }
@@ -14,8 +14,8 @@ class nginx {
     require => Package['nginx'];
   }
 
-  service { 'nginx running':
+  service { 'nginx':
     ensure  => running,
-    require => Package['start nginx'];
+    require => Exec['start nginx'];
   }
 }
